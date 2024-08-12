@@ -12,3 +12,9 @@ python manage.py runserver
 python manage.py makemigrations
 python manage.py migrate
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-firojahmed1-socialdjang-xm7diyoosj0.ws-us115.gitpod.io']
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) -->>>   #url]+
