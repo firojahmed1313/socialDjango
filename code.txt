@@ -18,3 +18,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) -->>>   #url]+
+'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
+python manage.py startapp name
+path('social/', include( 'social.urls' ))
