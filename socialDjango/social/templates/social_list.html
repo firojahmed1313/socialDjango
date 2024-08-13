@@ -20,8 +20,10 @@
         <div class="card-body">
           <h5 class="card-title">{{s.user.username}}</h5>
           <p class="card-text">{{s.text}}</p>
-          <a href="{% url 'socialUpdateView' s.id %}" class="btn btn-primary">Edit</a>
-          <a href="{% url 'socialDeleteView' s.id %}" class="btn btn-danger">Delete</a>
+          {% if s.user == user  %}
+            <a href="{% url 'socialUpdateView' s.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'socialDeleteView' s.id %}" class="btn btn-danger">Delete</a>
+          {% endif %}
         </div>
     </div>
 

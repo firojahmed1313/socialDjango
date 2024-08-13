@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+LogOut Page
+{% endblock  %}
+
+{% block contain %}
+
+<h1 class="text-center mt-4">Logged Out</h1>
+
+<a href="{% url 'login' %}">You are Logged Out. LogIn here </a>
+
+{% endblock %}

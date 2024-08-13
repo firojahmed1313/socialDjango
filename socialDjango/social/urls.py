@@ -10,4 +10,5 @@ urlpatterns = [
     path('create/',views.socialCreateView,name='socialCreateView'),
     path('<int:pk>/update/',views.socialUpdateView,name='socialUpdateView'),
     path('<int:pk>/delete/',views.socialDeleteView,name='socialDeleteView'),
+    path('register/', views.registerView, name='registerView'),
 ]
