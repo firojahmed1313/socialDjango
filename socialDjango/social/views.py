@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Social
-from .form import SocialForm
+from .forms import SocialForm
 from django.shortcuts import get_object_or_404,redirect
 # Create your views here.
 def socialHomeView(request):
@@ -10,6 +10,7 @@ def socialHomeView(request):
 
 def socialListView(request):
     socials=Social.objects.all().order_by('-created_at')
+    #print(socials)
     return render(request, 'social_list.html', {'socials':socials})
 
 def socialCreateView(request):

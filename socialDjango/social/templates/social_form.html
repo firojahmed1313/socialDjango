@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+ Social Home
+{% endblock  %}
+
+{% block contain %}
+
+<h1 class="text-center mt-4">Welcome to Roj Social</h1>
+
+<p class="text-center">This is a simple social media platform built using Django framework.</p>
+
+<h2>
+    {% if form.instance.pk %}
+    Edit Social
+    {% else %}
+    Add Social
+    {% endif %}
+</h2>
+
+<form method="POST" enctype="multipart/form-data" class="form" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-warning">Submit</button>
+</form>
+<a href="{% url 'socialListView'%}" class="btn btn-primary">Back To Home Page</a>
+{% endblock %}

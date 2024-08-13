@@ -6,5 +6,8 @@ from . import views
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('',views.socialHomeView,name='social-home'),
+    path('',views.socialListView,name='socialListView'),
+    path('create/',views.socialCreateView,name='socialCreateView'),
+    path('<int:pk>/update/',views.socialUpdateView,name='socialUpdateView'),
+    path('<int:pk>/delete/',views.socialDeleteView,name='socialDeleteView'),
 ]

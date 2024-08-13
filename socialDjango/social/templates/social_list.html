@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+ Social Home
+{% endblock  %}
+
+{% block contain %}
+
+<h1 class="text-center mt-4">Welcome to Roj Social</h1>
+
+<p class="text-center">This is a simple social media platform built using Django framework.</p>
+
+<a class="btn btn-primary mb-4" href="{% url 'socialCreateView' %}" >Create a new social</a>
+
+<div class="container row gap-3"  >
+    {% for s in socials %}
+    
+    <div class="card" style="width: 18rem;">
+        <img src="{{s.image.url}}" class="card-img-top" alt="IMAGE">
+        <div class="card-body">
+          <h5 class="card-title">{{s.user.username}}</h5>
+          <p class="card-text">{{s.text}}</p>
+          <a href="{% url 'socialUpdateView' s.id %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'socialDeleteView' s.id %}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
